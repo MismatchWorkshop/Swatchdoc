@@ -1,0 +1,61 @@
+
+
+
+.cSwatchdocHome,
+.cSwatchdocThreeColumn,
+.cSwatchdocSingle,
+.cSwatchdocContractSingle {
+	.col {
+
+		.forceCommunityRecordDetail {
+			margin-left: calc(-1 * var(--rsd-box-padding-x));
+			margin-right: calc(-1 * var(--rsd-box-padding-x));
+		}
+
+		.forceCommunityRecordHeadline {
+			--lwc-colorBackgroundAnchor: transparent;
+			--offset-x: var(--lwc-spacingSmall,0.75rem);
+
+			.profilePicWrapper {
+				--lwc-fontSizeLarge: 16px;
+				@extend %hidden;
+
+				+ .fieldWrapper {
+					margin-left: calc(-1 * var(--offset-x));
+				}
+			}
+
+			.entityNameTitle {
+				@extend %hidden;
+			}
+
+			.forceHighlightsStencil {
+				.header {
+					margin-left: calc(-1 * var(--offset-x));
+				}
+
+				.fieldWrapper {
+					@media only screen and (max-width: 47.9375em) {
+						max-width: none !important;
+					}
+				}
+			}
+		}
+	}
+
+    // Form Cell
+    .slds {
+        &-form_stacked {
+            .slds {
+                &-form-element {
+                    --lwc-spacingNone: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    padding: 30px 0;
+                }
+            }
+        }
+    }
+
+}

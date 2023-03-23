@@ -1,0 +1,83 @@
+.siteforceCptBody .cHeaderTopInternalWrapper {
+	max-width: none !important;
+	padding-left: var(--rsd-gutter) !important;
+	padding-right: var(--rsd-gutter) !important;
+}
+
+.comm-content-header .ui-widget {
+	margin-bottom: 0 !important;
+	padding-bottom: var(--vspace--default);
+	padding-top: var(--vspace--default);
+}
+
+.comm-tile-menu {
+	&__item-title {
+		--lwc-colorTextBrand: #D8995B;
+		background: #D8995B;
+	}
+}
+
+.siteforceCptBody .cHeader {
+	background: var(--rsd-colors--charcoal);
+	box-shadow: none !important;
+	color: #FFF;
+}
+
+.siteforceCptBody .cHeader .cHeaderTop {
+	background: var(--rsd-colors--charcoal) !important;
+	padding-bottom: 33px !important;
+	padding-top: 33px !important;
+}
+
+// // // // // // // // 
+//
+//	Global Nav
+
+.forceCommunityGlobalNavigation {
+	.comm-navigation {
+		&__list {
+			gap: 17px;
+		}
+
+		&__item {
+			a,
+			button {
+				color: #FFF;
+			}
+		}
+	}
+
+	.slds-is-nested {
+		.comm-navigation {
+			&__item {
+				a,
+				button {
+					color: $charcoal;
+				}
+			}
+		}
+	}
+
+}
+
+
+.forceCommunityGlobalNavigation .comm-navigation__item a[data-type="home"] {
+	display: none;
+}
+
+.cHeader {
+	--lwc-cptHeaderTextColor: #FFF;
+	--lwc-cptHeaderBackgroundColor: #{$charcoal};
+
+	.cSearchContainer {
+		align-items: center;
+
+		~ * {
+			--lwc-spacingXSmall: clamp(12px, calc(25/1920*100vw),25px);
+		}
+	}
+
+	.cProfileMenu {
+		margin-left: var(--lwc-spacingXSmall, 25px);
+	}
+}

@@ -1,0 +1,120 @@
+.cSwatchdocThreeColumn { 
+	.container--main {
+		box-shadow: 0 0 20px rgba(229, 229, 229, 0.75);
+		@media (min-width: 1024px) {
+			box-shadow: none;
+		}
+
+		>.row {
+			display: grid;
+			gap: 1px;
+			grid-template: auto / 100%;
+			@media (min-width: 1024px) {
+				gap: 27px;
+				grid-template: auto / 33.3% 33.3% 33.4%;
+			}
+		}
+	}
+
+	.col {
+		overflow: auto;
+		position: relative;
+
+		&__heading {
+			margin: 0;
+			@media (min-width: 1024px) {
+				margin: auto 0;
+			}
+		}
+	}
+
+	.forceCommunityRecordListStandard {
+		.recordListMobile {
+			display: none;
+			@media (min-width:1024px) {
+				display: block;
+			}
+		}
+	}
+}
+
+body:not(.interactions-enabled) {
+	.cSwatchdocThreeColumn {  
+		.forceCommunityRecordListStandard {
+			.viewAllLink {
+				> a {
+					//
+				}
+			}
+		}
+
+		.container--main {
+			.viewAllLink,
+			.rsd-card__heading .rsd-button__wrapper:last-child {
+				bottom: 0;
+				grid-column: 1 / -1;
+				left: 0;
+				margin: calc(var(--rsd-box-padding-x) * -1);
+				margin-bottom: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
+				z-index: 2;
+
+				> a {
+					border: 0;
+					border-radius: 0;
+					font-size: 0;
+					height: 100%;
+					text-indent: -999999px;
+					width: 100%;
+
+					&::after {
+						background: url("https://renoviallc--c.vf.force.com/resource/1676477678000/rsd_utility_icon_caret_right?i") no-repeat center center;
+						background-size: 18px auto;
+						bottom: 0;
+						content: "";
+						opacity: 0.5;
+						position: absolute;
+						right: 23px;
+						top: 0;
+						transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+						width: 36px;
+					}
+
+					&:hover {
+						background: none;
+
+						@media (min-width: 1024px) {
+							background: $charcoal;
+						}
+
+						&::after {
+							opacity: 1;
+							transform: translateX(-4px);
+						}
+					}
+				}
+
+				@media (min-width: 1024px) {
+					grid-column: 2;
+					margin: 0 0 0 auto;
+					position: relative;
+
+					> a {
+						border: 1px solid var(--rsd-colors--charcoal);
+						border-radius: 9999px;
+						font-size: var(--rsd-button--text-size);
+						height: auto;
+						text-indent: 0;
+						width: auto;
+
+						&::after {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

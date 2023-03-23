@@ -1,0 +1,146 @@
+.ui-widget--rsd-accordion {
+	+ *:not(.ui-widget--rsd-accordion) {
+		> *:first-child {
+			border-bottom: 1px solid $silver;
+
+			margin-left: calc(-1 * var(--rsd-box-padding-x, 0));
+			margin-right: calc(-1 * var(--rsd-box-padding-x, 0));
+			max-height: 0;
+			overflow: hidden;
+			padding: 0;
+			padding-left: calc(1 * var(--rsd-box-padding-x, 0));
+			padding-right: calc(1 * var(--rsd-box-padding-x, 0));
+
+			transition: max-height 0.2s ease-out, padding 0.2s ease-out;
+
+			@media (min-width:1024px) {
+				margin-left: 0;
+				margin-right: 0;
+				padding-left: 0;
+				padding-right: 0;
+
+			}
+
+			&.rsd-accordion--last-content {
+				border-bottom: 0;
+			}
+		}
+	}
+
+	&.open {
+		+ *:not(.ui-widget--rsd-accordion) {
+			> *:first-child {
+				padding-bottom: 25px;
+			}
+		}
+
+		.rsd-accordion {
+			&__title {
+				button { 
+					&::after {
+						transform: rotate(0);
+					}
+				}
+			}
+		}
+	}
+}
+
+.interactions-enabled { 
+	.ui-widget--rsd-accordion {
+		&,
+		&.open {
+			+ *:not(.ui-widget--rsd-accordion) {
+				> *:first-child {
+					max-height: none;
+					padding-bottom: 25px;
+				}
+			}
+		}
+	}
+}
+
+.rsd-accordion {
+	&--last-content {
+		margin-bottom: calc(-1 * var(--rsd-box-padding-x,0));
+	}
+
+	&-section {
+		--lwc-fontSize3: var(--rsd-font-size--md);
+		--slds-c-button-spacing-inline-start: 0;
+		--slds-c-button-spacing-block-start: #{calc(23/16*1em)};
+		--slds-c-button-sizing-border: 0;
+
+		.slds {
+			&-button {
+				--slds-c-button-spacing-inline-start: var(--rsd-box-padding-x, 0);
+				--slds-c-button-spacing-inline-end: calc(40px + var(--rsd-box-padding-x, 0));
+				--slds-c-button-spacing-block-start: #{calc(23/16*1em)};
+				--slds-c-button-spacing-block-end: #{calc(23/16*1em)};
+				--slds-c-button-sizing-border: 0;
+
+				@media (min-width: 1024px) {
+					--slds-c-button-spacing-inline-start: 0;
+					--slds-c-button-spacing-inline-end: 40px;
+					--slds-c-button-spacing-block-start: #{calc(23/16*1em)};
+					--slds-c-button-spacing-block-end: #{calc(23/16*1em)};
+				}
+			}
+		}
+	}
+
+	&__title {
+		button {
+			--slds-c-button-shadow-focus: none;
+
+			border: 0;
+			cursor: pointer;
+			font-size: var(--lwc-fontSize3);
+			justify-content: flex-start;
+			line-height: calc(19/16);
+
+			margin-left: calc(-1 * var(--rsd-box-padding-x, 0));
+			margin-right: calc(-1 * var(--rsd-box-padding-x, 0));
+			min-width: 100%;
+			padding: calc(23/16*1em);
+			padding-left: var(--rsd-box-padding-x, 0);
+			padding-right: calc(40px + var(--rsd-box-padding-x, 0));
+			position: relative;
+			text-align: left;
+
+			@media (min-width: 1024px) {
+
+				margin-left: 0;
+				margin-right: 0;
+				padding: calc(23/16*1em) 0;
+				padding-right: 59px;
+			}
+
+			&::after {
+				background: url("https://renoviallc--c.vf.force.com/resource/1675872682000/rsd_utility_icon_caret_up") no-repeat center center;
+				background-size: 18px auto;
+				content: "";
+				display: block;
+				height: 40px;
+				opacity: 50%;
+				position: absolute;
+				right: 19px;
+				top: 0.8em;
+				transform: rotate(180deg);
+				transition: transform 0.2s ease-in-out;
+				width: 40px;
+			}
+
+			&:hover {
+				color: $cherry;
+			}
+
+			&:hover,
+			&:active,
+			&:focus {
+				background: transparent;
+				outline: none;
+			}
+		}
+	}
+}

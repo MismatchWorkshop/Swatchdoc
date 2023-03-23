@@ -1,0 +1,137 @@
+.cSwatchdocContractSingle {
+	.forceCommunityActionsContainerMobile {
+		--slds-c-button-text-color: rgba(126, 126, 126, 0.75);
+		--slds-c-button-brand-color-background: rgba(126, 126, 126, 0.5);
+		--slds-c-icon-color-background: rgba(126, 126, 126, 0.5);
+		--lwc-colorTextLink: #{$charcoal};
+		--lwc-fontSize5: 14px;
+		--lwc-fontWeightBold: 500;
+		--lwc-squareIconUtilitySmall: 10px;
+		--lwc-spacingXSmall: 6px;
+
+		.slds-icon_container--circle {
+			img {
+				display: block;
+			}
+		}
+	}
+
+	.col {
+		&--accordion {
+			padding: 0;
+
+			.forceRelatedListContainer {
+				--lwc-borderRadiusMedium: 0;
+				--slds-c-card-color-background: transparent;
+				--slds-g-color-neutral-base-95: transparent;
+			}
+
+			.forceCommunityRelatedRecords {
+				overflow: hidden;
+				width: 100%;
+			}
+
+			.forceRelatedListSingleContainer {
+				--lwc-squareTappable: auto;
+
+				.slds {
+					&-card {
+						@media (min-width: 1024px) {
+							--lwc-colorBackgroundAlt: #F4F4F4;
+						}
+						border-left: 0;
+						border-right: 0;
+						border-top: 0;
+
+						tbody {
+							background: #F4F4F4;
+						}
+
+						.forceContentVirtualRelatedListStencil,
+						.forceContentRelatedListPreviewFileList {
+							background: var(--lwc-colorBackgroundAlt);
+						}
+
+						&__footer {
+							background: var(--lwc-colorBackgroundAlt);
+						}
+					}
+
+					&-truncate {
+						white-space: normal;
+					}
+
+					&-page-header {
+						background: transparent;
+					}
+				}
+
+				table {
+					--lwc-colorBackgroundAlt: #F4F4F4;
+				}
+
+				.slds-tabs-mobile__item {
+					padding: 16px var(--rsd-box-padding-x, 0);
+				}
+			}
+		}
+	}
+
+	.slds-avatar {
+		@extend %hidden;
+	}
+}
+
+body:not(.interactions-enabled) {
+	.cSwatchdocContractSingle {
+
+		.col {
+
+			&.hide-button {
+				.col__body {
+					.viewAllLink {
+						display: none;
+					}
+				}
+			}
+
+			&__heading {
+				&,
+				* {
+					&:not(.rsd-card__heading, .rsd-card__heading *) {
+						display: contents;
+					}
+				}
+			}
+
+			&__body {
+				
+				display: grid;
+
+				* {
+					&:not(.forceCommunityRelatedRecords, .forceCommunityRelatedRecords *, .forceCommunityRecordHeadline, .forceCommunityRecordHeadline *, .forceCommunityRecordListStandard *, .forceCommunityRecordDetail, .forceCommunityRecordDetail *, .forceCommunityEmptyComponentPlaceholder, .forceCommunityEmptyComponentPlaceholder *, .siteforceWarningComponentNoData, .siteforceWarningComponentNoData *) {
+						display: contents;
+					}
+				}
+				
+				.forceCommunityRecordHeadline {
+					grid-column: 1 / -1;
+				}
+
+				.forceCommunityEmptyComponentPlaceholder, 
+				.siteforceWarningComponentNoData {
+					grid-column: 1 / -1;
+				}
+	
+				.forceCommunityActionsContainerMobile {
+					grid-row: 1;
+					margin-bottom: 27px;
+					margin-left: calc(-1 * var(--rsd-box-padding-x, 0));
+					margin-right: calc(-1 * var(--rsd-box-padding-x, 0));
+				}
+			}
+
+			
+		}
+	}
+}

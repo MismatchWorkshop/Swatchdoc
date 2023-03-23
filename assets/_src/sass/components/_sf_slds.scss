@@ -1,0 +1,26 @@
+
+.slds {
+	&-form-element {
+        
+		//display: flex !important;
+		//flex-direction: column !important;
+		//gap: 20px;
+		//padding: 30px 0 !important; // rdx!
+
+		&__label {
+			@extend %label;
+		}
+	}
+
+	&-is-empty {
+		display: none;
+	}
+
+	&-global-header {
+		&__item {
+			&--search {
+				min-width: 0;
+			}
+		}
+	}
+}

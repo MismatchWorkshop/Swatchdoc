@@ -1,0 +1,31 @@
+
+.interactions-enabled { 
+	.cSwatchdocHome,
+	.cSwatchdocThreeColumn,
+	.cSwatchdocSingle,
+	.cSwatchdocContractSingle {
+		.col {
+			&__heading {
+				&,
+				* {
+					&:not(.rsd-card__heading, .rsd-card__heading *, .emptyRegionPlaceholder, .emptyRegionPlaceholder *) {
+						//display: contents;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.interactions-enabled {
+		.cSwatchdocHome,
+		.cSwatchdocThreeColumn,
+		.cSwatchdocSingle,
+		.cSwatchdocContractSingle {
+			.container--main > .row > .col {
+				display: block;
+			}
+		}
+	}
+}

@@ -1,0 +1,94 @@
+.cSearchContainer {
+	--lwc-cptHeaderInputBackgroundColor: rgba(0,0,0,0);
+	--lwc-colorBackground: rgba(0,0,0,0);
+	--lwc-spacingXxLarge: 0;
+	--lwc-spacingXLarge: 0;
+
+	.contentWrapper {
+		display: grid;
+		gap: 8px;
+		grid-template: auto / 1fr auto;
+	}
+
+	.autocompleteWrapper {
+		background-color: rgba(255,255,255,1);
+		border-radius: 4px;
+		padding-left: 8px;
+	}
+
+	input[type="text"] {
+		background: rgba(255,255,255,1);
+		//display: none;
+	}
+
+	.slds {
+		&-form-element__control {
+			&:not(.autocompleteWrapper,.autocompleteWrapper *) {
+				--lwc-spacingSmall: 0;
+				cursor: pointer;
+				grid-column: 2;
+				grid-row: 1 / -1;
+				height: 36px;
+				overflow: hidden;
+				width: 36px;
+
+				+ * {
+					@media (min-width: 768px) {
+						opacity: 0;
+						transition: all 0.25s ease-in-out;
+						visibility: hidden;
+					}
+				}
+
+				&.open + * {
+					opacity: 1;
+					visibility: visible;
+				}
+
+				>* {
+					display: none;
+				}
+
+				&::after {
+					background: url("https://renoviallc--c.vf.force.com/resource/1677775942000/rsd_search_green") no-repeat 1px center;
+					background-size: 32px auto;
+					border-radius: 50%;
+					content: "";
+					display: block;
+					height: 100%;
+					left: 0;
+					overflow: hidden;
+					position: absolute;
+					top: 0;
+					transition: all .25s ease-in-out;
+					width: 100%;
+				}
+
+				&:hover {
+					&::after {
+						background-color: rgba(255,255,255,0.2)
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 48em) {
+	.siteforceCptBody {
+		.cSearchContainer,
+		.cHeader .cSearchContainer {
+			min-width: 0;
+			width: auto;
+		}
+	}
+}
+
+/*
+.cSearchContainer {
+	min-width: 200px !important;
+	@media only screen and (min-width: 1024px) {
+		min-width: 400px !important;
+	}
+}
+*/

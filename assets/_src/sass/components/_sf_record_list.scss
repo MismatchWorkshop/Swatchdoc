@@ -1,0 +1,177 @@
+.recordListMobile {
+	--slds-c-button-text-color: rgba(126, 126, 126, 0.75);
+	--slds-c-button-brand-color-background: rgba(126, 126, 126, 0.5);
+	--slds-c-icon-color-background: rgba(126, 126, 126, 0.5);
+	--lwc-colorTextLink: #{$charcoal};
+	--lwc-fontSize5: 14px;
+	--lwc-fontWeightBold: 500;
+	--lwc-squareIconUtilitySmall: 10px;
+	--lwc-spacingXSmall: 6px;
+
+	.slds-icon_container--circle {
+		img {
+			display: block;
+		}
+	}
+
+	.forceCommunityActionsContainerMobile {
+		margin-bottom: var(--rsd-box-padding-x);
+
+		.buttonOutsideOverflow {
+			flex-direction: row;
+			gap: 8px;
+
+			.labelSpan {
+				--lwc-spacingXSmall: 0;
+			}
+		}
+	}
+		
+	.forceListRecord {
+		padding: 0;
+
+		.body {
+			margin-bottom: -1px;
+			padding: 0;
+		}
+
+		.listItem {
+			display: grid;
+			gap: 8px;
+			grid-template: auto / auto auto;
+			padding: 20px;
+			padding-left: var(--rsd-box-padding-x);
+			padding-right: var(--rsd-box-padding-x);
+		}
+	
+		a.listItem {
+			&:hover {
+				background-color: $silver;
+				text-decoration: none;
+			}
+		}
+	
+		.itemTitle {
+			--lwc-lineHeightText: 1.1;
+			grid-column: 1 / -1;
+			overflow: visible;
+			text-overflow: unset;
+			white-space: normal;
+		}
+
+		.itemRows {
+			display: contents;
+		}
+
+	}
+
+	.slds {
+		$el: "slds";
+
+		&-list--horizontal {
+			flex-direction: column;
+			gap: 4px;
+			.#{$el}-item {
+				&--label {
+					color: rgba(126, 126, 126, 0.75);
+					font-size: 10px;
+					font-weight: 500;
+					letter-spacing: 0.1em;
+					line-height: 1.2;
+					overflow: visible;
+					text-overflow: unset;
+					text-transform: uppercase;
+					white-space: normal;
+					width: auto;
+				}
+
+				&--detail {
+					white-space: normal;
+				}
+			}
+		}
+
+		&-item {
+			&--label {
+				color: rgba(126, 126, 126, 0.75);
+				font-size: 10px;
+				font-weight: 500;
+				letter-spacing: 0.1em;
+				overflow: visible;
+				text-overflow: unset;
+				text-transform: uppercase;
+				white-space: normal;
+				width: auto;
+			}
+		}
+	}
+
+}
+
+.forceCommunityRelatedList {
+	margin-left: calc(-1 * var(--rsd-box-padding-x));
+	margin-right: calc(-1 * var(--rsd-box-padding-x))
+}
+
+.forceBaseListView {
+	thead th {
+		border-bottom: 0 !important;
+		color: rgba(126, 126, 126, 0.5);
+		font-size: 10px;
+		font-style: normal;
+		font-weight: 600;
+		letter-spacing: 1px;
+		line-height: 12px;
+		padding-bottom: 0 !important;
+		text-transform: uppercase;
+	}
+
+	tbody td {
+		border-bottom: 1px solid rgba(229, 229, 229, 0.75);
+		font-size: 16px;
+		padding-bottom: 23px !important;
+		padding-top: 23px !important;
+
+		tr:last-child td {
+			border-bottom: 0;
+		}
+	}
+	
+}
+
+.forceCommunityRecordListStandard {
+
+	--lwc-fcFontSizeLarge: clamp(18px, calc(26/1920*100vw), 26px);
+
+
+	.forceBaseListView {
+		thead th,
+		tbody td {
+			&:first-of-type {
+				padding-left: var(--rsd-box-padding-x) !important;
+			}
+		}
+	}
+
+	.forceBaseListView {
+		thead th,
+		tbody td {
+			&:last-of-type {
+				padding-right: var(--rsd-box-padding-x) !important;
+			}
+		}
+	}
+
+	.recordListStandard,
+	.recordListMobile,
+	.forceCommunityRecordDetail {
+		grid-column: 1 / -1;
+		margin-left: calc(-1 * var(--rsd-box-padding-x));
+		margin-right: calc(-1 * var(--rsd-box-padding-x));
+		margin-top: 19px;
+	}
+
+	.viewAllLink {
+		@extend %rsd-button;
+	}
+}

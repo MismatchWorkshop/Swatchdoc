@@ -1,0 +1,81 @@
+.forceCommunityContactSupportForm {
+	--lwc-pageHeaderTitleFontSize: var(--rsd-font-size--lg);
+	--lwc-colorBackgroundInput: rgba(225, 226, 228, 0.5);
+	--lwc-pageHeaderTitleFontWeight: 700;
+	--lwc-borderRadiusMedium: 0;
+	--lwc-spacingXxSmall: 6px;
+	--lwc-borderWidthThin: 0;
+	--lwc-spacingSmall: 0;
+
+	--lwc-colorBackgroundButtonBrand: transparent;
+	--lwc-colorTextBrandPrimary: $charcoal;
+    
+
+	text-align: left;
+
+	> * {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.inputWrapper {
+		background: var(--lwc-colorBackgroundInput);
+	}
+
+	label,
+	.label {
+		--lwc-textTransform: uppercase;
+		color: rgba(126, 126, 126, 0.75);
+		font-weight: 500;
+		letter-spacing: 0.1em;
+		margin-bottom: 6px;
+	}
+
+	.subtitle {
+		font-size: clamp(14px, calc(16/1920*100vw), 16px);
+		margin-top: 24px;
+		text-align: left;
+		white-space: normal;
+	}
+
+	.slds {
+		&-page-header {
+			&__title {
+				text-align: left;
+			}
+		}
+
+		&-form {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			margin-top: 24px;
+		}
+
+		&-form-element {
+			//padding: 0 !important; // v2!
+		}
+
+		&-hint-parent {
+			.uiInput {
+				.slds-hidden {
+					position: absolute;
+				}
+			}
+		}
+	}
+
+	.autocompleteWrapper {
+		--lwc-spacingSmall: 14px;
+	}
+
+	button {
+		--lwc-textTransform: uppercase;
+		@extend %rsd-button;
+		border-radius: 99999px;
+		font-size: clamp(10px, calc(14/1920*100vw), 14px);
+		font-weight: 500;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+}

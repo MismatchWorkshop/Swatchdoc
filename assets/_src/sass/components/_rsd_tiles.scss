@@ -1,0 +1,191 @@
+
+.tiles {
+	--bg-color: #000;
+	display: flex;
+	gap: 40px;
+	list-style: none;
+	margin: 0 auto;
+	padding: 0 !important;
+}
+
+.tiles a,
+.rsd-tile-wrapper {
+	align-items: center;
+	background-image: url("https://renoviallc.file.force.com/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Png&versionId=0685c00000HbsfM&operationContext=CHATTER&contentId=05T5c00000yw759");
+	background-position: right center;
+	background-repeat: no-repeat;
+	background-size: 8px auto;
+	color: #FFF !important;
+	display: flex;
+}
+
+.tile--financials {
+	--bg-color: #D8995B;
+	--shade500: #C77A3E;
+	--shade250: #D08A4C;
+}
+
+.tile--in-progress {
+	--bg-color: #88802E;
+	--shade500: #68601B;
+	--shade250: #787025;
+}
+
+.tile--completed {
+	--bg-color: #72A49B;
+	--shade500: #52877D;
+	--shade250: #62958C;
+}
+
+.tile--login {
+	--bg-color: #79242F;
+	--shade500: #59151C;
+	--shade250: #691C25;
+}
+
+.tile,
+.rsd-tile {
+	background: var(--bg-color);
+	color: #FFF;
+	flex: 1;
+	font-family: var(--font--primary);
+	font-size: clamp(18px, calc(24/1920*100vw), 24px);
+	-webkit-font-smoothing: antialiased;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 28px;
+	padding: calc(21/24*1em) calc(27/24*1em) calc(21/24*1em) calc(63/24*1em);
+	position: relative;
+	transition: all 0.33s ease-in-out;
+
+	&:hover,
+	&:focus {
+		padding-left: calc(71/24*1em);
+		padding-right: calc(19/24*1em);
+		text-decoration: none;
+
+		&::before {
+			width: 41px;
+			@media (min-width: 1024px) {
+				width: 51px;
+			}
+		}
+	}
+
+	&::before {
+		background: var(--bg-color);
+		background: linear-gradient(to right, var(--shade500) 0, var(--shade500) 50%, transparent 50%), linear-gradient(to right, var(--shade250) 0, var(--shade250) 100%, transparent 100%);
+		background-repeat: no-repeat; 
+		background-size: contain; 
+		color: transparent;
+		content: "";
+		height: 100%;
+		left: 0; 
+		margin: 0 !important;
+		position: absolute;
+		top: 0;
+		transition: all 0.33s ease-in-out; 
+		width: 26px;
+
+		@media (min-width: 1024px) {
+			width: 36px;
+		}
+
+	}
+}
+
+.tile a span {
+	background: center / contain no-repeat url("https://renoviallc.file.force.com/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Png&versionId=0685c00000Hbpu8&operationContext=CHATTER&contentId=05T5c00000yvyKP");
+	display: inline-block;
+	height: 27px;
+	margin-right: 18px;
+	vertical-align: middle; 
+	width: 27px;
+}
+
+.tile--in-progress a span {
+	background-image: url("https://renoviallc.file.force.com/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Png&versionId=0685c00000Hbsg5&operationContext=CHATTER&contentId=05T5c00000yw77t");
+}
+
+.tile--completed a span {
+	background-image: url("https://renoviallc.file.force.com/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Png&versionId=0685c00000HbsBE&operationContext=CHATTER&contentId=05T5c00000yw5Xu");
+}
+
+.tile--login a span {
+	background-image: url("https://renoviallc.file.force.com/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Png&versionId=0685c00000HbsBD&operationContext=CHATTER&contentId=05T5c00000yw5Xp");
+}
+
+
+.rsd-tile {
+
+	background: var(--bg-color);
+	color: #FFF;
+	display: block;
+	flex: 1;
+	font-family: var(--font--primary);
+	font-size: clamp(16px, calc(24/1920*100vw),24px);
+	-webkit-font-smoothing: antialiased;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 16px;
+	line-height: calc(28/24);
+	position: relative;
+
+	@media (min-width:768px) {
+		//font-size: 24px;
+	}
+
+	&--tangerine {
+		--bg-color: #D8995B;
+		--shade500: #C77A3E;
+		--shade250: #D08A4C;
+	}
+
+	&--olive {
+		--bg-color: #88802E;
+		--shade500: #68601B;
+		--shade250: #787025;
+	}
+
+	&--teal {
+		--bg-color: #72A49B;
+		--shade500: #52877D;
+		--shade250: #62958C;
+	}
+
+	&--cherry{
+		--bg-color: #79242F;
+		--shade500: #59151C;
+		--shade250: #691C25;
+	}
+
+	.icon {
+		display: block;
+		flex: 0 0 35px;
+		margin-right: 10px;
+
+		@media (min-width: 768px) {
+			flex: 0 0 41px;
+		}
+
+		&--Approved {
+			flex: 0 0 24px;
+			margin-bottom: 5px;
+			margin-top: 5px;
+			@media (min-width: 768px) {
+				flex: 0 0 28px;
+				margin-bottom: 6px;
+				margin-top: 6px;
+			}
+		}
+	}
+
+	.label {
+		padding-top: 0.1em;
+	}
+}
+
+
+.rsd-tile-wrapper { 
+	padding-right: 27px;
+}

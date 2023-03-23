@@ -1,0 +1,66 @@
+@import "system/variables";
+@import "system/utilities";
+@import "system/typography";
+@import "system/buttons";
+
+:root {
+	--rsd-portal-color: #D8995B;
+	--rsd-vspace--lg: clamp(15px, calc(55/1920*100vw), 55px);
+	--rsd-vspace--md: clamp(10px, calc(40/1920*100vw), 40px);
+	--rsd-font--primary : proxima-nova, sans-serif;
+	--rsd-font-size--lg: clamp(20px, calc(26/1920*100vw), 26px);
+	--rsd-font-size--md: clamp(16px, calc(21/1920*100vw), 21px);
+	--rsd-button--text-size: 11px;
+	--font--primary : proxima-nova, sans-serif;
+	--font--secondary: stevie-sans,sans-serif;
+	--vspace--default: 27px;
+	--rsd-colors--charcoal: #212529;
+	--rsd-gutter: clamp(15px, calc(60/1920*100vw), 60px);
+	--rsd-spacingLarge: 32px;
+	--rsd-box-padding-x: 32px;
+	--lwc-formLabelFontSize: 10px;
+	--lwc-colorTextLabel: rgba(126, 126, 126, 0.75);
+	--record-detail-cols: 1;
+	--lwc-navigationFontFamily: proxima-nova, sans-serif;
+	@media (min-width: 1024px) {
+		--record-detail-cols: 2;
+		--rsd-spacingLarge: 47px;
+		--rsd-box-padding-x: 47px;
+	}
+	@media (min-width: 1440px) {
+		--record-detail-cols: 3;
+	}
+}
+
+body {
+	--lwc-navigationFontFamily: var(--rsd-font--primary);
+	--lwc-fontFamily: var(--rsd-font--primary);
+	--lwc-spacingLarge: var(--rsd-spacingLarge);
+	font-family: var(--font--primary);
+}
+
+@import "components/sf_global_header";
+@import "components/sf_records";
+@import "components/sf_record_list";
+@import "components/sf_record_detail";
+@import "components/sf_tabs";
+@import "components/rsd_tiles";
+@import "components/sf_slds";
+@import "components/rsd_footer";
+@import "components/rsd_record_heading";
+@import "components/rsd_notifications";
+@import "components/rsd_record_heading";
+@import "components/rsd_accordion";
+@import "components/rsd_contact_support_form";
+@import "components/rsd_search";
+@import "components/rsd_global_settings";
+
+@import "layouts/sf_global";
+@import "layouts/sf_customer_portal";
+@import "layouts/rsd_global";
+@import "layouts/rsd_contract";
+@import "layouts/rsd_1col";
+@import "layouts/rsd_2col";
+@import "layouts/rsd_3col";
+
+@import "admin/builder";

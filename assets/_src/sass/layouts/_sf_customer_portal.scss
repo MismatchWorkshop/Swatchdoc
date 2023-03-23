@@ -1,0 +1,129 @@
+.siteforceCptBody {
+	border: 0;
+
+	.cHeader {
+		&Wrapper {
+			margin-bottom: var(--rsd-vspace--lg);
+		}
+
+		.cSearchContainer {
+			&,
+			&.swatchdoc-search {
+				@media only screen and (max-width: 47.9375em) {
+					opacity: 0;
+				}
+			}
+		}
+		
+		.cHeaderTop--searchFocused {
+			.cSearchContainer {
+				@media only screen and (max-width: 47.9375em) {
+					opacity: 1;
+				}
+			}
+		}
+
+		.cLogo {
+			position: relative;
+			top: -2px;
+
+			> a {
+				height: clamp(24px, calc(38/1920*100vw), 39px);
+				width: clamp(140px, calc(225/1920*100vw), 225px);
+				//width: 225px;
+			}
+		}
+
+		.selfServiceProfileMenuTrigger {
+			.profileName {
+				display: none !important;
+				@media (min-width: 1024px) {
+					display: block !important;
+				}
+			}
+
+			.profileIcon {
+				max-width: none;
+			}
+		}
+	}
+
+	// 	Nav
+
+	div.comm-navigation .comm-navigation__list .comm-navigation__item {
+		a,
+		button {
+			position: relative;
+
+			&:hover,
+			&:focus {
+				color: var(--rsd-portal-color) !important;
+				text-decoration: none !important;
+			}
+
+			&::after {
+				border-bottom: 4px solid $tangerine;
+				border-left: 4px solid transparent;
+				border-right: 4px solid transparent;
+				bottom: 0;
+				content: "";
+				display: none;
+				height: 0;
+				left: 50%;
+				margin-left: -2px;
+				position: absolute;
+				width: 0;
+			}
+
+		}
+			
+		a {
+			&.slds-is-active:not([data-type="home"]) {
+
+				color: var(--rsd-portal-color) !important;
+				text-decoration: none !important;
+
+				&::after {
+					@media (min-width:48em) {
+						display: block;
+					}
+				}
+			}
+		}
+
+		button {
+			@media (max-width: 47.9375em) {
+				padding-left: calc(var(--lwc-navigationItemHorizontalPadding,0.75rem) + var(--lwc-fcSpacingLarge,28px));
+			}
+
+			&::after {
+				border-bottom: 4px solid #FFF;
+				bottom: auto;
+				display: block;
+				left: auto;
+				margin-top: -2px;
+				right: .5em;
+				top: 50%;
+				transform: rotate(180deg);
+				transition: all 0.4s ease-in-out;
+
+				@media (min-width:48em) {
+					right: 0;
+				}
+			}
+
+			&.slds-is-open {
+				color: #FFF !important;
+
+				&::after {
+					transform: rotate(0deg);
+				}	
+			}
+
+			.slds-icon_container {
+				display: none;
+			}
+		}
+	}
+
+}

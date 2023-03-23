@@ -1,0 +1,9 @@
+.rsd-global-settings {
+	display: none;
+}
+
+.interactions-enabled { 
+	.rsd-global-settings {
+		display: block;
+	}
+}

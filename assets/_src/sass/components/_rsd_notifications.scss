@@ -1,0 +1,58 @@
+
+
+.forceCommunityRichText .rsd,
+.rsd {
+	&-notification {
+		--lwc-colorTextLinkActive: #FFF;
+		@extend %bg--tangerine;
+		align-items: center;
+		background: $tangerine;
+		color: #FFF;
+		display: flex;
+		flex-direction: column;
+		font-size: 18px;
+		gap: 12px;
+		justify-content: center;
+		line-height: 1.25;
+		line-height: calc(22/18);
+		padding: 26px var(--rsd-gutter);
+		text-align: center;
+		
+
+		@media (min-width:1024px) {
+			background: linear-gradient(to left, var(--shade500) 0, var(--shade500) 25px, transparent 25px), linear-gradient(to left, var(--shade250) 0, var(--shade250) 50px, var(--bg-color) 50px);
+			flex-direction: row;
+			text-align: left;	
+		}
+
+		.icon, 
+		a {
+			display: inline-block;
+		}
+
+		.icon {
+			width: 32px;
+		}
+
+		a {
+			--lwc-colorTextLink: #FFF;
+			--lwc-colorTextLinkHover: #{$charcoal};
+			background: $charcoal;
+			border-radius: 9999px;
+			color: #FFF;
+			font-family: var(--font--secondary);
+			font-size: 9px;
+			font-weight: 700;
+			letter-spacing: 0.1em;
+			padding: 9px 16px;
+			text-transform: uppercase;
+			transition: all 0.25s ease-in-out;
+
+			&:hover {
+				background: #FFF;
+				color: $charcoal;
+				text-decoration: none;
+			}
+		}
+	}
+}

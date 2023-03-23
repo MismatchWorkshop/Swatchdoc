@@ -1,0 +1,315 @@
+
+
+.container {
+	&--header {
+
+		*[data-region-name='header'],
+		>.row > * {
+			display: grid;
+			gap: var(--rsd-vspace--md);
+			grid-auto-flow: row;
+			grid-template-columns: 1fr;
+			@media (min-width: 768px) {
+				grid-template-columns: repeat(2,1fr);
+			}
+			@media (min-width: 1024px) {
+				grid-auto-flow: column;
+				grid-template-columns: repeat(4,1fr);
+			}
+		}
+	}
+
+	&--main {
+		.forceCommunityRecordListStandard {
+			display: grid;
+			grid-template: repeat(3, auto) / auto 1fr;
+			padding: var(--rsd-box-padding-x);
+
+			.viewAllLink {
+				grid-column: 2;
+				margin-left: auto;
+			}
+		}
+	}
+}
+
+.bg--tangerine {
+	@extend %bg--tangerine;
+}
+
+.cSwatchdocHome,
+.cSwatchdocThreeColumn,
+.cSwatchdocSingle,
+.cSwatchdocContractSingle {
+	.container--main {
+		>.row {
+			flex-direction: column;
+			@media (min-width: 1024px) {
+				flex-direction: row;
+			}
+		}
+	}
+
+	&.component-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: var(--rsd-vspace--lg);
+	}
+
+	.forceCommunityRecordDetail {
+
+		grid-column: 1 / -1;
+		.has-tooltip > .tooltipIcon {
+			position: relative;
+			top: 20px;
+		}
+
+		.slds-card {
+			--lwc-varSpacingHorizontalMedium: var(--rsd-box-padding-x);
+			--slds-c-card-spacing-inline-end: var(--rsd-box-padding-x);
+			--slds-c-card-spacing-inline-start: var(--rsd-box-padding-x);
+			@media (min-width: 1024px) {
+				--slds-c-card-spacing-inline-end: var(--rsd-box-padding-x);
+				--slds-c-card-spacing-inline-start: var(--rsd-box-padding-x);
+			}
+		}
+
+		.slds-form {
+			display: grid;
+			grid-template-columns: repeat(var(--record-detail-cols, 3), 1fr);
+			
+			.slds-grid {
+				display: contents;
+
+				&.blank-item {
+					display: none;
+				}
+			}
+		}
+
+		.slds-form-element {
+			border-bottom: 1px solid rgba(229, 229, 229, 0.75) !important;
+			
+			margin-left: calc(-1 * var(--rsd-box-padding-x)) !important;
+			margin-right: calc(-1 * var(--rsd-box-padding-x)) !important;
+			max-width: none !important;
+
+			padding-left: var(--rsd-box-padding-x) !important;
+			padding-right: var(--rsd-box-padding-x) !important;
+			width: auto !important;
+
+			@media (min-width: 1024px) {
+				border-bottom: 0 !important;
+			
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+				max-width: none !important;
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+				width: 100% !important
+			}
+		}
+
+		.slds-is-empty,
+		.blank-item {
+			display: none;
+		}
+	}
+
+	.col {
+
+		--lwc-fcFontSizeLarge: clamp(18px, calc(26/1920*100vw), 26px);
+		display: grid;
+		grid-template: min-content auto / auto min-content;
+		padding: var(--rsd-box-padding-x);
+
+		&__heading {
+			grid-row: 1;
+
+			h2:first-child {
+				margin-left: 0;
+				margin-right: auto;
+			}
+
+			.rsd-button__wrapper {
+				grid-column: 1;
+			}
+
+			.rsd-button__wrapper + h2 {
+				grid-column: 2;
+			}
+
+			h2 + .rsd-button__wrapper {
+				grid-column: 3;
+			}
+
+			.rsd-button__wrapper {
+				@extend %rsd-button;
+
+				>* {
+					flex: 1;
+
+					&:first-child,
+					&:last-child { 
+						flex: 0 1 auto;
+					}
+
+					&:last-child {
+						margin-left: auto;
+						margin-right: 0;
+					}
+
+					&:first-child {
+						margin-left: 0;
+						margin-right: auto;
+					}
+				}
+
+				a {
+					&.rsd-back-button {
+						background-image: url("https://renoviallc--c.vf.force.com/resource/1676919679000/rsd_utility_icon_caret_left");
+						background-position: center top;
+						background-repeat: no-repeat;
+						background-size: 18px;
+						border: 0;
+						color: transparent;
+						display: block;
+						font-size: 0;
+						height: 28px;
+						line-height: 0;
+						opacity: 0.7;
+						padding: 0;
+						text-indent: -99999px;
+						transition: opacity 0.2s ease-in-out;
+						width: 28px;
+
+						&:hover {
+							background-color: transparent;
+							color: transparent;
+							opacity: 1;
+						}
+					}
+				}
+			}
+
+			.viewAllLink {
+				transform: translateY(-5px);
+			}
+
+		}
+
+		&__body {
+
+			.recordListStandard {
+				grid-column: 1 / -1;
+			}
+
+			.listTitle {
+				display: none;
+			}
+
+			.forceCommunityRecordListStandard {
+
+				grid-column: 1 / -1;
+				padding: 0;
+
+			}
+
+			.forceCommunityRecordDetail {
+				.forceDetailPanelDesktop {
+					&,
+					&.slds-card {
+						grid-column: 1 / -1;
+					}
+				}
+			}
+
+		}
+
+		.forceCommunityRichText {
+
+			--lwc-fcFontSizeLarge: clamp(18px, calc(26/1920*100vw), 26px);
+			padding: var(--rsd-box-padding-x) var(--rsd-box-padding-x) 0;
+
+			h1,h2,h3,h4,h5,h6 {
+				font-size: var(--lwc-fcFontSizeLarge,1rem);
+			}
+
+			.uiOutputRichText {
+				&,
+				.ql-editor {
+					align-items: center;
+					display: flex;
+					justify-content: space-between;
+				}
+			}
+
+			a {
+				@extend %label;
+				border: 1px solid var(--rsd-colors--charcoal) !important;
+				border-radius: 9999px;
+				color: var(--rsd-colors--charcoal);
+				display: inline-block;
+				font-size: 11px;
+				padding: 12px 16px !important;
+				transition: all 0.25s ease-in-out;
+				white-space: nowrap;
+
+				@media (min-width: 768px) {
+					padding: 12px 24px !important;
+				}
+
+				&:hover {
+					background: var(--rsd-colors--charcoal);
+					color: #FFF;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+body:not(.interactions-enabled) {
+
+	.cSwatchdocHome,
+	.cSwatchdocThreeColumn,
+	.cSwatchdocSingle {
+		.col {
+			&__heading {
+				&,
+				* {
+					&:not(.rsd-card__heading, .rsd-card__heading *) {
+						display: contents;
+					}
+				}
+			}
+
+			&__body {
+				&,
+				* {
+					&:not(.forceCommunityRelatedRecords, .forceCommunityRelatedRecords *, .forceCommunityRecordHeadline, .forceCommunityRecordHeadline *, .forceCommunityRecordListStandard *, .forceCommunityRecordDetail, .forceCommunityRecordDetail *, .forceCommunityEmptyComponentPlaceholder, .forceCommunityEmptyComponentPlaceholder *, .siteforceWarningComponentNoData, .siteforceWarningComponentNoData *) {
+						display: contents;
+					}
+				}
+				
+				.forceCommunityRecordHeadline {
+					grid-column: 1 / -1;
+				}
+
+				.forceCommunityEmptyComponentPlaceholder, 
+				.siteforceWarningComponentNoData {
+					grid-column: 1 / -1;
+				}
+			}
+
+			&.hide-button {
+				.col__body {
+					.viewAllLink {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+}

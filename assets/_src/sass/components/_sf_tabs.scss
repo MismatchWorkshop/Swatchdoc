@@ -1,0 +1,49 @@
+
+// // // // //
+//	Tabs 
+
+.forceCommunityRecordHomeTabs {
+
+	--lwc-borderWidthThick: 0;
+	--lwc-colorTextActionLabelActive: #FFF;
+	--lwc-borderWidthThin: 0;
+	--lwc-fontSize3: 10px;
+	--lwc-spacingLarge: 0;
+
+	.uiTabBar {
+		--lwc-spacingLarge: 10px;
+		border: 1px solid rgba(126, 126, 126, 0.75);
+		border-radius: 99999px;
+		display: inline-block;
+	}
+
+	.uiTabItem {
+		--lwc-borderWidthThick: 0;
+		--lwc-brandPrimary: transparent;
+		border-radius: 99999px;
+
+		&.active {
+			background: $charcoal;
+			color: #FFF;
+		}
+		
+		a {
+			--lwc-spacingLarge: .5rem;
+			
+		}
+	}
+
+	@media (min-width: 64em) {
+		--lwc-fontSize3: 12px;
+
+		.uiTabset--base .tabs__item {
+			font-size: 12px;
+		}
+	}
+}
+
+.siteforceContentArea {
+	.uiTabBar {
+		margin-bottom: 2.9375rem;
+	}
+}

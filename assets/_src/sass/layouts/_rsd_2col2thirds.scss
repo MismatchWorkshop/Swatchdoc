@@ -1,0 +1,22 @@
+.rsd-2col-2thirds {
+	&--wrapper {
+		.col {
+
+			--lwc-fcFontSizeLarge: clamp(18px, calc(26/1920*100vw), 26px);
+			background: #FFF;
+			padding: var(--rsd-box-padding-x);
+
+			&__heading {
+				--lwc-fcFontSizeLarge: var(--rsd-font-size--lg);
+
+				> * > * {
+					margin-bottom: calc(25/20*1em);
+				}
+
+				h1,h2,h3,h4,h5,h6 {
+					font-size: var(--rsd-font-size--lg);
+				}
+			}
+		}
+	}
+}

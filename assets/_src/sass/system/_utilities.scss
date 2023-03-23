@@ -1,0 +1,19 @@
+
+%hidden,
+.rsd-hide {
+	display: none;
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	overflow: hidden;
+	position: absolute;
+	visibility: hidden;
+	width: 0;
+	z-index: -1;
+}
+
+%bg--tangerine {
+	--bg-color: #D8995B;
+	--shade500: #C77A3E;
+	--shade250: #D08A4C;
+}

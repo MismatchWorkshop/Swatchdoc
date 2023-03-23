@@ -1,0 +1,57 @@
+
+// Main content wrapper
+
+.siteforceContentArea {
+	--lwc-layoutVerticalPadding: clamp(16px, calc(36/1440*100vw), 36px);
+	padding-left: var(--rsd-gutter);
+	padding-right: var(--rsd-gutter);
+}
+
+
+.comm-content-header {
+	+ .slds-grid {
+
+		background: none !important;
+
+		> .comm-layout-column:first-child {
+			background: none !important; 
+			padding: 0 !important;
+			width: 100% !important;
+		}
+
+		> .comm-layout-column:last-child {
+			display: none;
+		}
+
+		*[data-region-name="content"] {
+
+			display: flex;
+			gap: 27px;
+
+			> * {
+				background: #FFF;
+				flex: 1; 
+				padding: 36px 47px;
+				width: 34%;
+			}
+
+			> .ui-widget {
+				&:last-child {
+					.slds-card {
+						margin: 0;
+						padding: 0;
+					}
+
+					.slds-form {
+						display: grid;
+						grid-template-columns: repeat(3, 1fr);
+
+						.slds-grid {
+							display: contents;
+						}
+					}
+				}
+			}
+		}
+	}
+}
